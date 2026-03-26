@@ -1,7 +1,5 @@
 # 🧠 CNN Model Evaluation & Improvement Report
 
-## 📌 Project Overview
-This project focuses on evaluating and improving a Convolutional Neural Network (CNN) model using techniques such as data augmentation, Batch Normalization, Dropout, Early Stopping, and Grad-CAM for explainability.
 
 ---
 
