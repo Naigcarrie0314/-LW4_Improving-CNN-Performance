@@ -6,58 +6,57 @@
 ## 🔍 A. Model Evaluation Analysis
 
 ### 1. Weakest-performing classes
-The weakest-performing classes were those with many misclassifications, shown by values spread outside the diagonal in the confusion matrix. These classes were often confused with similar classes, meaning the model had difficulty distinguishing their features.
+Based on the confusion matrix, the weakest-performing classes were the ones with lower diagonal values and more scattered predictions outside the diagonal. Some regions were frequently confused with similar-looking regions, which means the model had difficulty distinguishing features between those classes. A few classes showed lower prediction counts compared to others, indicating weaker recognition performance.
 
 ### 2. Precision, Recall, and F1-score variation
-Precision, Recall, and F1-score varied across classes. Some classes had high scores (around 0.80–0.90), indicating good performance, while others had lower scores (around 0.40–0.60), showing weaker classification. This indicates that the model performed unevenly across different classes.
+The Precision, Recall, and F1-score varied across the different region classes. Several classes achieved high scores close to 0.80–1.00, showing strong classification performance, while some classes had noticeably lower values around 0.40–0.70. This variation suggests that the model performed better on classes with clearer and more distinguishable features, while classes with similar patterns were harder to classify correctly.
 
 ### 3. Low recall meaning
-Low recall means that the model failed to correctly identify many actual instances of a class. In other words, there are many false negatives, meaning the model is missing important data.
+Low recall means that the model failed to identify many actual samples belonging to a specific class. This resulted in a higher number of false negatives. In the confusion matrix, this can be observed when actual samples of one class were predicted as another class instead of their correct category.
 
 ### 4. AUC vs Accuracy
-Accuracy measures overall correctness, while AUC shows how well the model distinguishes between classes. A high AUC means the model can separate classes well even if accuracy is not perfect. Therefore, AUC provides a more detailed evaluation of performance compared to accuracy alone.
+Accuracy measures the overall percentage of correct predictions, while AUC evaluates how well the model separates classes. From the results shown, some classes maintained strong AUC values even when their accuracy was not perfect, indicating that the model could still distinguish classes effectively. Therefore, AUC provides a more detailed assessment of classification capability than accuracy alone.
 
 ---
 
 ## ⚙️ B. Model Improvement
 
 ### 5. Data Augmentation
-Data augmentation improved validation accuracy by increasing the diversity of training data. It helped the model generalize better and reduced overfitting.
+Data augmentation improved the model by increasing the diversity of training images. This helped the model generalize better to unseen data and reduced overfitting. The improved validation performance and more balanced class predictions suggest that augmentation contributed positively to the training process.
 
 ### 6. Batch Normalization
-Batch Normalization helps stabilize and speed up training by normalizing the inputs of each layer. It also improves model performance and makes training more efficient.
+Batch Normalization stabilized the learning process and improved convergence during training. It normalized layer inputs, which helped the model train faster and achieve more consistent performance across epochs.
 
 ### 7. Dropout
-Dropout reduces overfitting by randomly turning off some neurons during training. This forces the model to learn more robust and general features.
+Dropout reduced overfitting by randomly disabling neurons during training. This forced the network to learn more generalized features instead of memorizing the training data, which improved validation performance.
 
 ### 8. Early Stopping
-Early Stopping prevents overfitting by stopping training when validation performance stops improving. This avoids unnecessary training and keeps the model from memorizing the data.
+Early Stopping prevented unnecessary training once the validation performance stopped improving. This helped avoid overfitting and preserved the model weights with the best validation results.
 
 ---
 
 ## 📊 C. Performance Comparison
 
 ### 9. Improvements observed
-After modifying the model, validation accuracy increased, loss decreased, and predictions became more consistent.
+After applying the improvements, the model achieved better validation accuracy, lower validation loss, and more balanced Precision, Recall, and F1-scores across classes. The confusion matrix also showed stronger diagonal values, indicating more correct predictions.
 
 ### 10. Most impactful enhancement
-Data augmentation contributed the most because it increased the variety of training data, which improved generalization and reduced overfitting.
+Data augmentation appeared to provide the greatest improvement because it increased training diversity and helped the model recognize different image variations more effectively. This contributed to improved generalization and reduced misclassification.
 
 ### 11. Training vs Validation gap
-Yes, the gap decreased. This means the model is no longer overfitting as much and performs more consistently on both training and validation data.
-
+Yes, the gap between training and validation performance decreased after the improvements. This indicates that the model generalized better and overfitting was reduced compared to earlier training results.
 ---
 
 ## 🔎 D. Explainability (Grad-CAM Integration)
 
 ### 12. Role of Grad-CAM
-Grad-CAM helped by showing which parts of the image the model focused on when making predictions. This made the model’s decisions easier to understand.
+Grad-CAM helped visualize the regions of the image that influenced the model’s predictions. It highlighted the important areas the model focused on during classification, making the decision-making process easier to interpret.
 
 ### 13. Model focus improvement
-Yes, the improved model focused more on relevant areas of the image rather than the background. This shows that the model learned more meaningful features.
+Yes, the improved model appeared to focus more on relevant image regions rather than unrelated background areas. This indicates that the model learned more meaningful and discriminative features for classification.
 
 ### 14. Importance of Explainability
-Explainability is important because it helps users trust the model, understand its decisions, and detect possible errors or bias. It is especially important in real-world applications like healthcare and security.
+Explainability is important because it increases trust and transparency in AI systems. By understanding how the model makes decisions, researchers can identify errors, detect bias, and improve reliability. This is especially important in critical applications such as healthcare, security, and automated decision-making systems.
 
 ---
 
